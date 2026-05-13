@@ -31,13 +31,6 @@ _data = {
 [node name="Enemy" type="CharacterBody2D" unique_id=832786675 groups=["Enemy"]]
 collision_mask = 0
 script = ExtResource("1_script")
-speed = 80.0
-anim_speed = 0.15
-attack_range = 40.0
-attack_damage = 3
-attack_cooldown = 1.0
-exp_reward = 800
-coin_reward = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1265165781]
 texture_filter = 1
