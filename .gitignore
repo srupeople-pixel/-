@@ -1,0 +1,19 @@
+# Godot 빌드 결과물
+*.exe
+*.apk
+*.aab
+android/build/libs/
+.godot/
+export/
+
+# Godot import 캐시
+.import/
+*.import
+
+# Syncthing
+.stfolder/
+.stignore
+
+# OS
+.DS_Store
+Thumbs.db

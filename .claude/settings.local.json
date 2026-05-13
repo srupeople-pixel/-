@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git config *)",
+      "Bash(git commit *)",
+      "Bash(python -)",
+      "Bash(python -c \"import os; [os.remove\\(f'assets/monsters/boar_col{i}.png'\\) for i in range\\(6\\)]\")",
+      "Read(//c/Users/gosh0/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/abb0218b-d2a0-487b-870a-5b2261a73ea4/815a2a78-bc75-466d-b42e-f7f098c2c92a/skills/docx/**)",
+      "Bash(pandoc unpacked/word/document.xml -o doc_text.md)",
+      "Bash(pandoc \"E:\\\\게임개발 godot\\\\야화전_게임기획서_v4.docx\" -t markdown)",
+      "Bash(python)",
+      "Bash(git checkout *)",
+      "WebFetch(domain:github.com)",
+      "Bash(gh repo *)",
+      "Bash(git push *)"
+    ]
+  }
+}
