@@ -49,10 +49,10 @@ position = Vector2(960, 540)
 [node name="Spawner" type="Node2D" parent="." unique_id=786822935]
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("4_enemy")
-area_x_min = 660.0
-area_x_max = 1260.0
-area_y_min = 300.0
-area_y_max = 740.0
+area_x_min = 200.0
+area_x_max = 1720.0
+area_y_min = 150.0
+area_y_max = 870.0
 
 [node name="Timer" type="Timer" parent="Spawner" unique_id=1699684107]
 
@@ -60,10 +60,10 @@ area_y_max = 740.0
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("8_crow")
 spawn_interval = 3.5
-area_x_min = 660.0
-area_x_max = 1260.0
-area_y_min = 300.0
-area_y_max = 740.0
+area_x_min = 200.0
+area_x_max = 1720.0
+area_y_min = 150.0
+area_y_max = 870.0
 
 [node name="Timer" type="Timer" parent="CrowSpawner" unique_id=1699684108]
 
@@ -71,10 +71,10 @@ area_y_max = 740.0
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("9_boar")
 spawn_interval = 5.0
-area_x_min = 660.0
-area_x_max = 1260.0
-area_y_min = 300.0
-area_y_max = 740.0
+area_x_min = 200.0
+area_x_max = 1720.0
+area_y_min = 150.0
+area_y_max = 870.0
 
 [node name="Timer" type="Timer" parent="BoarSpawner" unique_id=1699684109]
 
@@ -82,10 +82,10 @@ area_y_max = 740.0
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("10_bear")
 spawn_interval = 8.0
-area_x_min = 660.0
-area_x_max = 1260.0
-area_y_min = 300.0
-area_y_max = 740.0
+area_x_min = 200.0
+area_x_max = 1720.0
+area_y_min = 150.0
+area_y_max = 870.0
 
 [node name="Timer" type="Timer" parent="BearSpawner" unique_id=1699684110]
 
