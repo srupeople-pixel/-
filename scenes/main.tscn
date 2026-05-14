@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://tj4nokfl8g7r"]
 
-[ext_resource type="Texture2D" uid="uid://cyvw5qcng212t" path="res://assets/background.png" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://b2h4ny4ngpng1" path="res://assets/Han.png" id="1_bg"]
 [ext_resource type="AudioStream" uid="uid://cdnjipxvjt45l" path="res://assets/music.mp3" id="7_music"]
 [ext_resource type="PackedScene" path="res://scenes/GameUI.tscn" id="5_gameui"]
 [ext_resource type="PackedScene" path="res://scenes/StatsHUD.tscn" id="6_statshud"]

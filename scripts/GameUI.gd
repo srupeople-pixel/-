@@ -24,6 +24,11 @@ const ZONES : Array = [
 	{"name": "도성 외곽",  "min_lv": 91, "desc": "도성 밖 험준한 황무지"},
 ]
 
+const ZONE_BACKGROUNDS : Dictionary = {
+	"한양 도성": "res://assets/Han.png",
+	"북악 귀림": "res://assets/Buk.png",
+}
+
 # ==========================================
 # 노드 참조 (@onready)
 # ==========================================
@@ -363,6 +368,18 @@ func _refresh_move() -> void:
 func _move_to_zone(zone_name: String) -> void:
 	PlayerData.current_region = zone_name
 	_refresh_move()
+	_update_background(zone_name)
+
+func _update_background(zone_name: String) -> void:
+	var bg : Sprite2D = get_node_or_null("/root/Main/Background")
+	if not bg:
+		return
+	var path : String = ZONE_BACKGROUNDS.get(zone_name, "")
+	if path == "":
+		return
+	var tex : Texture2D = load(path)
+	if tex:
+		bg.texture = tex
 
 ## 다른 스크립트에서 특정 탭을 직접 열 때 사용
 ## 예) GameUI.open_tab(GameUI.TAB_REBIRTH)
