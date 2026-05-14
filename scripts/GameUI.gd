@@ -380,6 +380,8 @@ func _update_background(zone_name: String) -> void:
 	var tex : Texture2D = load(path)
 	if tex:
 		bg.texture = tex
+		var tex_size := tex.get_size()
+		bg.scale = Vector2(1920.0 / tex_size.x, 1080.0 / tex_size.y)
 
 ## 다른 스크립트에서 특정 탭을 직접 열 때 사용
 ## 예) GameUI.open_tab(GameUI.TAB_REBIRTH)

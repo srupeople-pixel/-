@@ -30,7 +30,8 @@ b = Vector2(1150, 883)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1585515703]
 texture_filter = 1
-position = Vector2(576, 324)
+position = Vector2(960, 540)
+scale = Vector2(1.4524, 1.40625)
 texture = ExtResource("1_bg")
 
 [node name="Player" parent="." unique_id=210986408 instance=ExtResource("2_player")]
