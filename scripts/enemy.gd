@@ -14,7 +14,7 @@ extends CharacterBody2D
 # 처치 보상 (기획서 4.1 핵심 방치 루프)
 # ==========================================
 ## 이 몬스터를 처치했을 때 지급할 경험치
-@export var exp_reward: int = 1000
+@export var exp_reward: int = 20
 ## 이 몬스터를 처치했을 때 지급할 엽전
 @export var coin_reward: int = 5
 

@@ -36,7 +36,7 @@ anim_speed = 0.25
 attack_range = 45.0
 attack_damage = 10
 attack_cooldown = 1.0
-exp_reward = 1200
+exp_reward = 50
 coin_reward = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1365165782]
