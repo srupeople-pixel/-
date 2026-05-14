@@ -56,8 +56,8 @@ var _mp_regen_buffer: float = 0.0
 var target_enemy: Node2D = null
 var is_attacking := false
 
-const MAP_MIN = Vector2(20, 20)
-const MAP_MAX = Vector2(1132, 628)
+const MAP_MIN = Vector2(30, 30)
+const MAP_MAX = Vector2(1890, 890)
 
 var last_direction := Vector2.DOWN
 

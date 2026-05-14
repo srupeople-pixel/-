@@ -29,7 +29,8 @@ _data = {
 }
 
 [node name="Enemy" type="CharacterBody2D" unique_id=732786674 groups=["Enemy"]]
-collision_mask = 0
+collision_layer = 4
+collision_mask = 1
 script = ExtResource("1_script")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165165780]

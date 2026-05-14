@@ -11,20 +11,29 @@
 [ext_resource type="PackedScene" uid="uid://b3boarb3rs3rk3r" path="res://scenes/boar_berserker.tscn" id="9_boar"]
 [ext_resource type="PackedScene" uid="uid://b34rb34rb34r01" path="res://scenes/bear.tscn" id="10_bear"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_top"]
-b = Vector2(1922, -5)
+[sub_resource type="RectangleShape2D" id="RectShape_TopWall"]
+size = Vector2(1960, 30)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_bottom"]
-a = Vector2(-385, 645)
-b = Vector2(1538, 649)
+[sub_resource type="RectangleShape2D" id="RectShape_BottomWall"]
+size = Vector2(1960, 30)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_left"]
-a = Vector2(0, -191)
-b = Vector2(1, 890)
+[sub_resource type="RectangleShape2D" id="RectShape_LeftWall"]
+size = Vector2(30, 960)
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_right"]
-a = Vector2(1154, -198)
-b = Vector2(1150, 883)
+[sub_resource type="RectangleShape2D" id="RectShape_RightWall"]
+size = Vector2(30, 960)
+
+[sub_resource type="RectangleShape2D" id="RectShape_ObstacleTL"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectShape_ObstacleTR"]
+size = Vector2(200, 200)
+
+[sub_resource type="RectangleShape2D" id="RectShape_ObstacleBL"]
+size = Vector2(200, 160)
+
+[sub_resource type="RectangleShape2D" id="RectShape_ObstacleBR"]
+size = Vector2(200, 160)
 
 [node name="Main" type="Node2D" unique_id=1312596132]
 
@@ -35,11 +44,15 @@ scale = Vector2(1.4524, 1.40625)
 texture = ExtResource("1_bg")
 
 [node name="Player" parent="." unique_id=210986408 instance=ExtResource("2_player")]
-position = Vector2(576, 324)
+position = Vector2(960, 540)
 
 [node name="Spawner" type="Node2D" parent="." unique_id=786822935]
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("4_enemy")
+area_x_min = 660.0
+area_x_max = 1260.0
+area_y_min = 300.0
+area_y_max = 740.0
 
 [node name="Timer" type="Timer" parent="Spawner" unique_id=1699684107]
 
@@ -47,6 +60,10 @@ enemy_scene = ExtResource("4_enemy")
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("8_crow")
 spawn_interval = 3.5
+area_x_min = 660.0
+area_x_max = 1260.0
+area_y_min = 300.0
+area_y_max = 740.0
 
 [node name="Timer" type="Timer" parent="CrowSpawner" unique_id=1699684108]
 
@@ -54,6 +71,10 @@ spawn_interval = 3.5
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("9_boar")
 spawn_interval = 5.0
+area_x_min = 660.0
+area_x_max = 1260.0
+area_y_min = 300.0
+area_y_max = 740.0
 
 [node name="Timer" type="Timer" parent="BoarSpawner" unique_id=1699684109]
 
@@ -61,11 +82,15 @@ spawn_interval = 5.0
 script = ExtResource("3_spawner")
 enemy_scene = ExtResource("10_bear")
 spawn_interval = 8.0
+area_x_min = 660.0
+area_x_max = 1260.0
+area_y_min = 300.0
+area_y_max = 740.0
 
 [node name="Timer" type="Timer" parent="BearSpawner" unique_id=1699684110]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1221727516]
-position = Vector2(576, 324)
+position = Vector2(960, 540)
 
 [node name="GameUI" parent="." instance=ExtResource("5_gameui")]
 
@@ -79,17 +104,33 @@ volume_db = -5.0
 [node name="Walls" type="StaticBody2D" parent="." unique_id=109766591]
 
 [node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=2109845822]
-position = Vector2(-384, -215)
-shape = SubResource("SegmentShape2D_top")
+position = Vector2(960, -15)
+shape = SubResource("RectShape_TopWall")
 
 [node name="BottomWall" type="CollisionShape2D" parent="Walls" unique_id=1187582905]
-position = Vector2(0, 216)
-shape = SubResource("SegmentShape2D_bottom")
+position = Vector2(960, 920)
+shape = SubResource("RectShape_BottomWall")
 
 [node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=2063494485]
-position = Vector2(-383, -27)
-shape = SubResource("SegmentShape2D_left")
+position = Vector2(-15, 460)
+shape = SubResource("RectShape_LeftWall")
 
 [node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=1057225496]
-position = Vector2(385, -18)
-shape = SubResource("SegmentShape2D_right")
+position = Vector2(1935, 460)
+shape = SubResource("RectShape_RightWall")
+
+[node name="ObstacleTL" type="CollisionShape2D" parent="Walls" unique_id=2200000001]
+position = Vector2(160, 160)
+shape = SubResource("RectShape_ObstacleTL")
+
+[node name="ObstacleTR" type="CollisionShape2D" parent="Walls" unique_id=2200000002]
+position = Vector2(1760, 160)
+shape = SubResource("RectShape_ObstacleTR")
+
+[node name="ObstacleBL" type="CollisionShape2D" parent="Walls" unique_id=2200000003]
+position = Vector2(160, 820)
+shape = SubResource("RectShape_ObstacleBL")
+
+[node name="ObstacleBR" type="CollisionShape2D" parent="Walls" unique_id=2200000004]
+position = Vector2(1760, 820)
+shape = SubResource("RectShape_ObstacleBR")
