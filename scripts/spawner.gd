@@ -26,7 +26,20 @@ func _on_timer_timeout():
 	get_parent().add_child(enemy)
 
 func _get_random_spawn_position() -> Vector2:
-	return Vector2(
-		randf_range(area_x_min + spawn_margin, area_x_max - spawn_margin),
-		randf_range(area_y_min + spawn_margin, area_y_max - spawn_margin)
-	)
+	var space_state := get_world_2d().direct_space_state
+	var shape := CircleShape2D.new()
+	shape.radius = 24.0
+	var query := PhysicsShapeQueryParameters2D.new()
+	query.shape = shape
+	query.collision_mask = 1
+
+	for _i in 30:
+		var pos := Vector2(
+			randf_range(area_x_min + spawn_margin, area_x_max - spawn_margin),
+			randf_range(area_y_min + spawn_margin, area_y_max - spawn_margin)
+		)
+		query.transform = Transform2D(0, pos)
+		if space_state.intersect_shape(query, 1).is_empty():
+			return pos
+
+	return Vector2(960, 540)
