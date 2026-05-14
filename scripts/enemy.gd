@@ -10,13 +10,10 @@ extends CharacterBody2D
 ## 공격 쿨타임 (초)
 @export var attack_cooldown: float = 1.5
 
-# ==========================================
-# 처치 보상 (기획서 4.1 핵심 방치 루프)
-# ==========================================
-## 이 몬스터를 처치했을 때 지급할 경험치
+@export_group("처치 보상")
 @export var exp_reward: int = 10
-## 이 몬스터를 처치했을 때 지급할 엽전
 @export var coin_reward: int = 5
+@export_group("")
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
