@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cjxfd5qadg2lu" path="res://scripts/spawner.gd" id="3_spawner"]
 [ext_resource type="PackedScene" uid="uid://cn1had6o8o4sj" path="res://scenes/enemy.tscn" id="4_enemy"]
 [ext_resource type="PackedScene" uid="uid://b3crow0ffici4l" path="res://scenes/crow_official.tscn" id="8_crow"]
+[ext_resource type="PackedScene" uid="uid://b3boarb3rs3rk3r" path="res://scenes/boar_berserker.tscn" id="9_boar"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_top"]
 b = Vector2(1922, -5)
@@ -46,6 +47,13 @@ enemy_scene = ExtResource("8_crow")
 spawn_interval = 3.5
 
 [node name="Timer" type="Timer" parent="CrowSpawner" unique_id=1699684108]
+
+[node name="BoarSpawner" type="Node2D" parent="." unique_id=786822937]
+script = ExtResource("3_spawner")
+enemy_scene = ExtResource("9_boar")
+spawn_interval = 5.0
+
+[node name="Timer" type="Timer" parent="BoarSpawner" unique_id=1699684109]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1221727516]
 position = Vector2(576, 324)
