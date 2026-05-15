@@ -30,14 +30,6 @@ func _ready():
 	sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	player = get_tree().get_first_node_in_group("Player")
 	update_sprite_frame(false)
-	_apply_config()
-
-func _apply_config() -> void:
-	var key = scene_file_path.get_file().get_basename()
-	if MonsterConfig.REWARDS.has(key):
-		var r = MonsterConfig.REWARDS[key]
-		exp_reward = r["exp"]
-		coin_reward = r["coin"]
 
 func _physics_process(delta):
 	_attack_timer = maxf(_attack_timer - delta, 0.0)
