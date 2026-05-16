@@ -60,6 +60,40 @@ var stat_points: int = 0
 var rebirth_stat_bonus: int = 0
 
 # ==========================================
+# 장비 슬롯 (Equipment Slots — 기획서 장비 시스템)
+# ==========================================
+## 장착된 장비 슬롯 (null = 비어있음, Dictionary = 아이템 데이터)
+var equipment: Dictionary = {
+	"weapon":       null,  # 무기 (武器)
+	"offhand":      null,  # 보조 (副手)
+	"helmet":       null,  # 투구 (兜)
+	"armor":        null,  # 갑옷 (甲)
+	"gloves":       null,  # 장갑 (手)
+	"boots":        null,  # 신발 (足)
+	"necklace":     null,  # 목걸이 (頸)
+	"ring1":        null,  # 반지 1 (指)
+	"ring2":        null,  # 반지 2 (指)
+	"transcendent": null,  # 초월 장비
+}
+
+## 장비 착용. item = {"name": "...", "stats": {...}} 형태
+func equip_item(slot: String, item) -> void:
+	if equipment.has(slot):
+		equipment[slot] = item
+
+## 장비 해제
+func unequip_item(slot: String) -> void:
+	if equipment.has(slot):
+		equipment[slot] = null
+
+## 슬롯의 표시 이름 반환
+func get_equip_display(slot: String) -> String:
+	var item = equipment.get(slot, null)
+	if item == null:
+		return "비어있음"
+	return item.get("name", "비어있음")
+
+# ==========================================
 # 기타 (Miscellaneous)
 # ==========================================
 ## 현재 접속 중인 지역 (예: "한양 도성", "북악 귀림" 등)
@@ -110,13 +144,13 @@ func get_hp_regen() -> float:
 func get_drop_rate_bonus() -> float:
 	return stat_perception * 0.4
 
-## 이동속도 — 기본 150 + 신법×1
+## 이동속도 — 기본 150 + 신법×10
 func get_move_speed() -> float:
-	return 150.0 + stat_agility * 1.0
+	return 150.0 + stat_agility * 10.0
 
-## 공격속도 배율 (1.0 = 기본, 최대 2.0)
+## 공격속도 배율 (1.0 = 기본, 최대 3.0)
 func get_attack_speed() -> float:
-	return minf(1.0 + stat_attack_speed * 0.01, 2.0)
+	return minf(1.0 + stat_attack_speed * 0.10, 3.0)
 
 ## 최대 MP — 영력×10 + 정신력×15 + 레벨×20
 func get_max_mp() -> int:

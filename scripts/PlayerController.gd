@@ -151,7 +151,7 @@ func _state_auto_move(delta: float) -> void:
 
 	# 기존 player.gd 이동 로직 그대로 사용
 	var direction := (target_enemy.global_position - global_position).normalized()
-	velocity = direction * speed
+	velocity = direction * PlayerData.get_move_speed()
 	move_and_slide()
 
 	anim_timer += delta
@@ -287,10 +287,12 @@ func attack() -> void:
 		update_sprite_frame(false)
 
 	sword_sfx.play()
+	animation_player.speed_scale = PlayerData.get_attack_speed()
 	animation_player.play("attack")
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "attack":
+		animation_player.speed_scale = 1.0
 		is_attacking = false
 		sword_sfx.stop()
 		if target_enemy and is_instance_valid(target_enemy):

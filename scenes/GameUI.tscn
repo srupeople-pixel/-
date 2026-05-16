@@ -119,7 +119,7 @@ layout_mode = 2
 [node name="LblAgilityName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowAgility" unique_id=-1194967275]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "신법 (身法)  |  회피 +0.5% / 이동속도 +1 / 치명타 +0.3%"
+text = "신법 (身法)  |  회피 +0.5% / 이동속도 +10 / 치명타 +0.3%"
 
 [node name="LblAgilityVal" type="Label" parent="RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowAgility" unique_id=-1194967274]
 custom_minimum_size = Vector2(50, 0)
@@ -239,7 +239,7 @@ layout_mode = 2
 [node name="LblAttackSpeedName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowAttackSpeed" unique_id=-1194967225]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "신속 (迅速)  |  공격속도 +1% / 최대 +100%"
+text = "신속 (迅速)  |  공격속도 +10% / 최대 +200%"
 
 [node name="LblAttackSpeedVal" type="Label" parent="RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowAttackSpeed" unique_id=-1194967224]
 custom_minimum_size = Vector2(50, 0)
@@ -353,62 +353,149 @@ theme = SubResource("Theme_black_1")
 [node name="Title" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=1680773189]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "[ 장비 ] 장비 강화 및 자동 제작 설정"
+text = "[ 장비 ] 장착 부위"
 horizontal_alignment = 1
 
 [node name="Sep0" type="HSeparator" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2026325282]
 layout_mode = 2
 
-[node name="EnhanceSection" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=878950447]
-layout_mode = 2
-text = "▶ 장비 강화"
-
-[node name="EnhanceRow" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=1303975867]
+[node name="RowWeapon" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000010]
 layout_mode = 2
 
-[node name="LblEquipSlot" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/EnhanceRow" unique_id=242531055]
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowWeapon" unique_id=2200000011]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "무기 (武器)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowWeapon" unique_id=2200000012]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "장착 무기: 목검 +0"
+text = "비어있음"
 
-[node name="BtnEnhance" type="Button" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/EnhanceRow" unique_id=2116077652]
+[node name="RowOffhand" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000020]
 layout_mode = 2
-text = "강화 (+1)"
 
-[node name="LblEnhanceCost" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=1346191824]
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowOffhand" unique_id=2200000021]
 layout_mode = 2
-text = "강화석 보유: 0개  |  강화 성공률: 100%"
+custom_minimum_size = Vector2(200, 0)
+text = "보조 (副手)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowOffhand" unique_id=2200000022]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowHelmet" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000030]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowHelmet" unique_id=2200000031]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "투구 (兜)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowHelmet" unique_id=2200000032]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowArmor" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000040]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowArmor" unique_id=2200000041]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "갑옷 (甲)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowArmor" unique_id=2200000042]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowGloves" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000050]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowGloves" unique_id=2200000051]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "장갑 (手)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowGloves" unique_id=2200000052]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowBoots" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000060]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowBoots" unique_id=2200000061]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "신발 (足)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowBoots" unique_id=2200000062]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowNecklace" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000070]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowNecklace" unique_id=2200000071]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "목걸이 (頸)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowNecklace" unique_id=2200000072]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowRing1" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000080]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing1" unique_id=2200000081]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "반지 1 (指)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing1" unique_id=2200000082]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowRing2" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000090]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing2" unique_id=2200000091]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "반지 2 (指)"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing2" unique_id=2200000092]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
+
+[node name="RowTranscendent" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000100]
+layout_mode = 2
+
+[node name="LblName" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowTranscendent" unique_id=2200000101]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 0)
+text = "초월 장비"
+
+[node name="LblItem" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowTranscendent" unique_id=2200000102]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "비어있음"
 
 [node name="Sep1" type="HSeparator" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=342873]
 layout_mode = 2
 
-[node name="CraftSection" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=1918133725]
+[node name="LblNote" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=2200000110]
 layout_mode = 2
-text = "▶ 자동 제작 설정 (기획서 4.2)"
-
-[node name="CraftRow" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=763662648]
-layout_mode = 2
-
-[node name="LblCraftTarget" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/CraftRow" unique_id=1539909010]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "자동 제작 대상: (미설정)"
-
-[node name="BtnCraftSet" type="Button" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/CraftRow" unique_id=46954775]
-layout_mode = 2
-text = "대상 설정"
-
-[node name="AutoCraftRow" type="HBoxContainer" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout" unique_id=948687732]
-layout_mode = 2
-
-[node name="LblAutocraft" type="Label" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/AutoCraftRow" unique_id=683049202]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "자동 제작: OFF"
-
-[node name="BtnToggleCraft" type="Button" parent="RootContainer/TabArea/TabContainer/PanelEquip/Layout/AutoCraftRow" unique_id=96635842]
-layout_mode = 2
-text = "ON / OFF"
+theme_override_colors/font_color = Color(0.5, 0.5, 0.5, 1)
+text = "* 아이템은 몬스터 처치 시 획득합니다."
 
 [node name="PanelRelic" type="Control" parent="RootContainer/TabArea/TabContainer" unique_id=1831212663]
 visible = false

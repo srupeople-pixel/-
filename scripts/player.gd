@@ -40,7 +40,7 @@ func _physics_process(delta):
 			attack()
 		else:
 			var direction = (target_enemy.global_position - global_position).normalized()
-			velocity = direction * speed
+			velocity = direction * PlayerData.get_move_speed()
 			move_and_slide()
 
 			
@@ -127,10 +127,12 @@ func attack():
 		update_sprite_frame(false) 
 	
 	sword_sfx.play()
+	animation_player.speed_scale = PlayerData.get_attack_speed()
 	animation_player.play("attack")
 
 func _on_animation_finished(anim_name: String):
 	if anim_name == "attack":
+		animation_player.speed_scale = 1.0
 		is_attacking = false
 		if target_enemy and is_instance_valid(target_enemy):
 			if target_enemy.has_method("die"):

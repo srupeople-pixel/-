@@ -80,6 +80,18 @@ const ZONE_BACKGROUNDS : Dictionary = {
 @onready var btn_attack_speed_minus : Button = $RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowAttackSpeed/BtnAttackSpeedMinus
 @onready var btn_mana_minus         : Button = $RootContainer/TabArea/TabContainer/PanelGrowth/Layout/RowMana/BtnManaMinus
 
+# ── [장비] 탭 노드
+@onready var lbl_equip_weapon      : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowWeapon/LblItem
+@onready var lbl_equip_offhand     : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowOffhand/LblItem
+@onready var lbl_equip_helmet      : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowHelmet/LblItem
+@onready var lbl_equip_armor       : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowArmor/LblItem
+@onready var lbl_equip_gloves      : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowGloves/LblItem
+@onready var lbl_equip_boots       : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowBoots/LblItem
+@onready var lbl_equip_necklace    : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowNecklace/LblItem
+@onready var lbl_equip_ring1       : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing1/LblItem
+@onready var lbl_equip_ring2       : Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowRing2/LblItem
+@onready var lbl_equip_transcendent: Label = $RootContainer/TabArea/TabContainer/PanelEquip/Layout/RowTranscendent/LblItem
+
 # ── [환생] 탭 노드
 @onready var lbl_cond_lv        : Label  = $RootContainer/TabArea/TabContainer/PanelRebirth/Layout/LblCondLv
 @onready var lbl_rebirth_count  : Label  = $RootContainer/TabArea/TabContainer/PanelRebirth/Layout/LblRebirthCount
@@ -163,7 +175,7 @@ func _refresh_tab_content(tab_index: int) -> void:
 		TAB_GROWTH:
 			_refresh_growth()
 		TAB_EQUIP:
-			pass  # TODO: 장비 데이터 연동
+			_refresh_equip()
 		TAB_RELIC:
 			pass  # TODO: 유물 파편 수량 연동
 		TAB_SPIRIT:
@@ -214,6 +226,19 @@ func _refresh_growth() -> void:
 		pd.get_hp_regen(), pd.get_mp_regen(), pd.get_drop_rate_bonus(),
 		pd.get_move_speed(), pd.get_attack_speed()
 	]
+
+## [장비] 탭 — PlayerData의 장착 장비를 슬롯 Label에 반영
+func _refresh_equip() -> void:
+	lbl_equip_weapon.text       = PlayerData.get_equip_display("weapon")
+	lbl_equip_offhand.text      = PlayerData.get_equip_display("offhand")
+	lbl_equip_helmet.text       = PlayerData.get_equip_display("helmet")
+	lbl_equip_armor.text        = PlayerData.get_equip_display("armor")
+	lbl_equip_gloves.text       = PlayerData.get_equip_display("gloves")
+	lbl_equip_boots.text        = PlayerData.get_equip_display("boots")
+	lbl_equip_necklace.text     = PlayerData.get_equip_display("necklace")
+	lbl_equip_ring1.text        = PlayerData.get_equip_display("ring1")
+	lbl_equip_ring2.text        = PlayerData.get_equip_display("ring2")
+	lbl_equip_transcendent.text = PlayerData.get_equip_display("transcendent")
 
 ## [환생] 탭 — PlayerData의 환생 관련 수치를 Label에 반영
 func _refresh_rebirth() -> void:
